@@ -20,7 +20,7 @@ import errorHandler from './middlewares/error.js'
 import attachLogger from './middlewares/logger.js';
 
 const app = express();
-const PORT = config.port;
+const PORT = config.port || 8080;
 
 const swaggerOptions = {
     definition:{
