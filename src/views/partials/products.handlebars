@@ -1,0 +1,27 @@
+<div class="card mb-3 product">
+    <div class="position-relative">              
+        {{#if this.thumbnail }}
+                <img class="card-img-top shop-image  img-fluid" src="/img/products/600x400_{{ this.thumbnail }}" alt="{{ this.title }}">
+        {{else}}
+        <img class="card-img-top shop-image  img-fluid" src="https://dummyimage.com/600x400/ccc/000&text=" alt="{{ this.title }}">
+        {{/if}}
+        <span class="badge badge-success category">{{ this.category }}</span>
+        {{#if this.stock}}
+            <span class="badge badge-primary stock">Stock {{ this.stock }}</span>
+        {{else}}
+            <span class="badge badge-danger stock">Sin stock</span>
+         {{/if}}
+    </div>    
+    <div class="card-body">
+        <h4 class="card-title product-title">{{ this.title }}</h4>
+        <p class="card-text product-description">{{ this.description }}</p>
+        <div class="clearfix">
+            <div class="price float-left">{{ this.price }} $</div>
+            {{#if this.stock}}
+                <button data-id="{{this._id}}" class="btn btn-raised btn-success float-right addToCart">
+                    <i class="fa fa-gift" aria-hidden="true"></i> Agregar
+                </button>
+            {{/if}}
+        </div>
+    </div>
+</div>  

@@ -1,0 +1,44 @@
+<style>
+
+</style>
+<div class="container">
+
+    <section class="vh-100">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        {{#if correct }}
+                        <div class="card rounded" >
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Cambio de contraseña</h2>
+                                <p>Ingresa tu nueva contraseña </p>
+                                <form id="loginForm">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control form-control-lg" />                  
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg">Generar</button>
+                                    </div>
+                          
+
+                                </form>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> el enlace ha caduco o es incorrecto.
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/recovery.js"></script>
+

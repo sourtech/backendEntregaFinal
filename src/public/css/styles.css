@@ -1,0 +1,57 @@
+.site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.site-header a {
+    color: #ccc;
+    transition: color .15s ease-in-out;
+}
+
+.site-header .navuser .dropdown-menu a {
+    color: #000;
+    transition: color .15s ease-in-out;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.price-cart {
+    margin-right: 20px;
+}
+.product-title{
+    min-height: 60px;
+}
+.product-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    min-height: 100px;
+}
+.product .stock{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 5px 5px;
+}
+.product .category{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 5px 0 0 ;
+    font-size: 1rem;
+}

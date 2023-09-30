@@ -1,0 +1,13 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Productos <small>En vivo</small></h1>        
+        </div>
+    </div>
+</section>
+<div class="container">
+    {{> forms}}
+    <div class="row" id="products"></div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/products.js"></script>

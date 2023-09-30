@@ -1,0 +1,29 @@
+<form id="nuevoUsuario">
+    <div class="row">
+        <div class="col-md-3 mt-4">
+            <label class="form-label">Nombre</label>
+            <input name="first_name" type="text" class="form-control" value="{{ this.payload.first_name }}">
+        </div>
+        <div class="col-md-3 mt-4">
+            <label class="form-label">Apellido</label>
+            <input name="last_name" type="text" class="form-control" value="{{ this.payload.last_name }}">
+        </div>   
+        <div class="col-md-3 mt-4">
+            <label class="form-label">EMail</label>
+            <input name="email" type="email" class="form-control" value="{{ this.payload.email }}">
+        </div>
+        <div class="col-md-3 mt-4">
+            <input id="role" type="hidden" value="{{this.payload.role}}">
+            <label class="form-label">Rol</label>
+            <select name="role" id="selectRol" class="form-control">
+                <option value="usuario">Usuario</option>
+                <option value="premium">Premium</option>
+            </select>
+        </div> 
+        <div class="col-md-12 mt-4 mb-4">
+            <input type="hidden" id="idUser" value="{{ this.payload._id }}">
+            <button class="btn btn-success" type="submit">Guardar</button>
+            <a class="ml-4" href="/admin/users">Cancelar</a>
+        </div>
+    </div>        
+</form>

@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {{#if payload.prevLink}}
+            <li class="page-item">
+                <a class="page-link" href="?{{payload.prevLink}}">Anterior</a>
+            </li>
+        {{/if}}
+        <li class="page-item active"><span class="page-link" href="#">{{payload.page}}</span></li>
+        {{#if payload.nextLink}}
+            <li class="page-item">
+                <a class="page-link" href="?{{payload.nextLink}}">Siguiente</a>
+            </li>
+        {{/if}}                
+    </ul>
+    </nav>
+</div>

@@ -1,0 +1,31 @@
+paths:
+  /api/products/:
+    get:
+      summary: Traer todos los productos
+      tags:
+        - Products
+      responses:
+        "200":
+        description: "Los productos de obtuvieron correctamente"
+    post:
+      summary: Agregar nuevo producto
+      tags:
+        - Products
+      responses:
+        "200":
+        description: "Producto agregado correctamente"
+  /api/products/{pid}:
+    get:
+      summary: Trar todos los productos
+      tags:
+        - Products
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Id del producto
+          schema:
+            $type: String
+      responses:
+        "200":
+        description: "Los productos de obtuvieron correctamente"

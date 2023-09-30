@@ -1,0 +1,41 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Productos</h1>    
+            
+                <code>
+                    <h4>Algunas ejemplo de filtrados</h4>
+                <a class="d-block" href="/?sort=-1&limit=6&category=Drama">VER: Categoria Drama Limit 6 Orden ASC</a>
+                <a class="d-block" href="/?sort=1&limit=6&category=Drama">VER: Categoria Drama Limit 6 Orden DESC</a>
+                <a class="d-block" href="/?limit=3">VER: Todas limitado a 3</a>
+                <a class="d-block" href="/?limit=3&stock=1">VER: Solo las que tengan Stock limitado a 3</a>
+               </code>
+                         
+        </div>
+    </div>
+</section>
+<style>
+
+</style>
+<div class="container">
+    <div class="row">
+        {{#each payload.docs }}
+        <div class="col-md-4">
+            {{> products }}            
+        </div>
+        {{else}}
+            <div class="col-md-12">
+                <p class="text-center d-block">No hay productos para mostrar 😢</p>
+                <a class="text-center d-block" href="javascript: history.go(-1)">Volver</a>
+            </div>            
+        {{/each}}
+
+        {{#if payload.docs }}
+            {{> products.paginate }}        
+        {{/if}}
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/cart.js"></script>

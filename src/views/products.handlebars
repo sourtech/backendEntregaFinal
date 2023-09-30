@@ -1,0 +1,29 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Productos</h1>                         
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        {{#each payload.docs }}
+        <div class="col-md-4">
+            {{> products }}            
+        </div>
+        {{else}}
+            <div class="col-md-12">
+                <p class="text-center d-block">No hay productos para mostrar 😢</p>
+                <a class="text-center d-block" href="javascript: history.go(-1)">Volver</a>
+            </div>            
+        {{/each}}
+
+        {{#if payload.docs }}
+            {{> products.paginate }}        
+        {{/if}}
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/cart.js"></script>

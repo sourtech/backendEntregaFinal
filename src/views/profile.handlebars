@@ -1,0 +1,53 @@
+<style>
+
+</style>
+<div class="container">
+
+    <section class="vh-100">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <form id="myperfil" enctype="multipart/form-data" class="card rounded" >
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Perfil</h2>
+                                <form id="loginForm">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="email">Nombre y apellido</label>
+                                        <p>{{user.name}}</p>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="email">Email</label>
+                                        <p>{{user.email}}</p>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label">Foto </label>
+                                        <input name="perfil" id="perfil" type="file" class="form-control">                
+                                    </div> 
+                                    <div class="form-outline mb-4">
+                                        <input id="role" type="hidden" value="{{user.role}}">
+                                        <label class="form-label" for="email">Rol</label>                                        
+                            
+                                        <select name="role" id="selectRol" class="form-control">
+                                            <option value="usuario">Usuario</option>
+                                            <option value="premium">Premium</option>
+                                        </select>
+                 
+                                    </div>                                    
+                                    <div class="d-flex d-flex justify-content-around">
+                                        <button class="btn btn-primary btn-lg" id="update">Actualizar</button>
+                                        <a href="/api/sessions/logout" class="btn btn-secondary btn-lg">Salir</a>
+                                    </div>                                   
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/profile.js"></script>

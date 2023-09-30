@@ -1,0 +1,46 @@
+<section class="py-5 text-center container">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <h1 class="fw-light">Usuarios</h1>                         
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a id="deleteUsers" style="text-align: right;display: block;margin: 20px 0;" href="#">Borrar usuarios que hace 30 minutos no se conectan</a>
+        </div>
+        <div class="col-md-12">
+            
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Ultima conexion </th>
+                <th scope="col">Creado</th>
+                <th scope="col" width="150px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each payload }}
+                <tr>
+                    <td>{{ this.name }}<br><span class="badge badge-primary stock">{{ this.email }}</span></td>
+                    <td>{{ this.role }}</td>
+                    <td>{{ this.last_connection }}</td>
+                    <td>{{ this.created_at }}</td>
+                    <td>
+                        <a href="/admin/users/edit/{{this.id}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        <a href="#" data-user="{{this.id}}" class="btn btn-danger delete"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>     
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/edit.user.js"></script>
+

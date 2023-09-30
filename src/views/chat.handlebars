@@ -1,0 +1,21 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Chat</h1>
+            <p>Hola {{user.name}}!</p>
+        </div>
+    </div>
+</section>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-12">
+            <input type="text" class="form-control" id="text" >
+            <div id="messages"></div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="user" value="{{user.name}}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>

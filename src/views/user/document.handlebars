@@ -1,0 +1,48 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Documentos</h1>                         
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="col-md-12 mb-4"><h5>Documentacion actual</h5></div>
+    <ul class="list-group">        
+    {{#each payload }}
+        <li class="list-group-item">
+            <strong style="width: 100px;display: inline-block;text-transform: uppercase;">{{ this.name }}</strong>
+            <a href="/img/documents/{{ this.reference }}" target="_blank">Ver</a>
+        </li>           
+    {{else}}
+        <li class="list-group-item">Por el momento no tiene subido ningun documento  😢</li>
+    {{/each}}
+    </ul>
+<form id="documentos" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-12 my-4"><h5>Agregar documentacion</h5></div>
+        <div class="col-md-9">
+            <label class="form-label">DNI </label>
+            <input name="dni" type="file" class="form-control" multiple>                
+        </div> 
+        <div class="col-md-9 mt-4">
+            <label class="form-label">Domicilio </label>
+            <input name="domicilio" type="file" class="form-control" multiple>                
+        </div> 
+            <div class="col-md-9 mt-4">
+            <label class="form-label">Cuenta </label>
+            <input name="cuenta" type="file" class="form-control" multiple>                
+        </div>
+ 
+        <div class="col-md-4 mt-4 mb-4">
+            <button class="btn btn-success" type="submit">Guardar</button>
+            <a class="ml-4" href="/profile">Cancelar</a>
+        </div>
+    </div>        
+</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/document.js"></script>
+
+

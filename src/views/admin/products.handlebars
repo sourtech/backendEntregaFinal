@@ -1,0 +1,46 @@
+<section class="py-5 text-center container">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <h1 class="fw-light">Productos</h1>                         
+        </div>
+    </div>
+</section>
+<section class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <a href="/admin/products/add" class="btn btn-primary">Agregar nuevo</a>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col" width="150px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each payload.docs }}
+                <tr>
+                    <td>{{ this.title }}<br><span class="badge badge-warning stock">{{ this.owner }}</span></td>
+                    <td>{{ this.stock }}</td>
+                    <td>{{ this.price }}</td>
+                    <td>
+                        <a href="/admin/products/edit/{{this._id}}" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                        <a href="#" data-product="{{this._id}}" class="btn btn-danger delete"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+            </table>     
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/edit.js"></script>
+

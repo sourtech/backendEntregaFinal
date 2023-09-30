@@ -1,0 +1,53 @@
+<header class="site-header sticky-top py-3">
+    <nav class="container">
+        <a class="py-2 d-none d-md-inline-block mr-4" href="/"><i class="fas fa-home"></i></a>
+        <!--<a class="py-2 d-none d-md-inline-block mr-4" href="/realtimeproducts">RealTimeProducts</a>-->
+        <a class="py-2 d-none d-md-inline-block mr-4" href="/products/">Productos</a>
+        {{#unless user.superUser }} 
+        <a class="py-2 d-none d-md-inline-block mr-4" href="/chat">Chat</a>
+        {{/unless}} 
+        
+        {{#if user}}
+            <div class="dropdown d-none d-md-inline-block mr-4 float-right navuser">
+                <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+                    <div class="media-body my-2">{{user.name}}</div>
+                    {{#if user.image }}
+                        <img class="ml-2" style="border-radius: 1rem;" src="/img/profile/40x40_{{ user.image }}" width="40" height="40" alt="avatar">
+                    {{else}}
+                        <img class="ml-2" src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar">
+                    {{/if}}
+                    
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <a class="dropdown-item" href="/profile">Perfil ({{user.role}})</a>
+                    {{#unless user.superUser }}       
+                        <a class="dropdown-item" href="/documents">Documentos</a>
+                    {{/unless}} 
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/api/sessions/logout">Salir</a>
+                </ul>
+            </div>
+                 
+            <a class="py-2 d-none d-md-inline-block mr-4 float-right" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            
+        {{else}}          
+            <a class="py-2 d-none d-md-inline-block mr-4 float-right" href="/register">Registrarse</a>
+            <a class="py-2 d-none d-md-inline-block mr-4 float-right" href="/login">Login</a>
+        {{/if}} 
+
+
+    </nav>
+
+</header> 
+
+{{#if user.superUser }}
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="navbar-brand">Panel Administrador</li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/products">Productos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/users">Usuarios</a>
+        </li>
+    </ul>
+{{/if}} 

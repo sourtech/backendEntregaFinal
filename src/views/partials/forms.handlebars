@@ -1,0 +1,53 @@
+<form id="nuevoProducto" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Nombre</label>
+            <input name="title" type="text" class="form-control" value="{{ this.payload.title }}">
+        </div>
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Precio</label>
+            <input name="price" type="text" class="form-control" value="{{ this.payload.price }}">
+        </div>   
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Código</label>
+            <input name="code" type="text" class="form-control" value="{{ this.payload.code }}">
+        </div>
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Stock</label>
+            <input name="stock" type="text" class="form-control" value="{{ this.payload.stock }}">
+        </div> 
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Categoría</label>
+            <input name="category" type="text" class="form-control"  value="{{ this.payload.category }}">
+        </div>  
+        <div class="col-md-4 mt-4">
+            <label class="form-label">Estado</label>
+            <select name="status" class="form-control">
+                <option value="1">True</option>
+                <option value="">False</option>
+            </select>
+        </div>
+      
+            <div class="col-md-3 mt-4">
+                {{#if this.payload.thumbnail }}
+                <img src="/img/products/400x600_{{ this.payload.thumbnail }}" width="150px">
+                {{/if}}
+            </div>
+            <div class="col-md-9 mt-4">
+                <label class="form-label">Imagenes </label>
+                <input name="thumbnails" type="file" class="form-control">                
+            </div> 
+        
+                                                       
+        <div class="col-md-12 mt-4">
+            <label class="form-label">Descripcion</label>
+            <textarea name="description" rows="2" class="form-control">{{ this.payload.description }}</textarea>
+        </div>        
+
+        <div class="col-md-4 mt-4 mb-4">
+            <input type="hidden" id="idProduct" value="{{ this.payload._id }}">
+            <button class="btn btn-success" type="submit">Guardar</button>
+            <a class="ml-4" href="/admin/products">Cancelar</a>
+        </div>
+    </div>        
+</form>
