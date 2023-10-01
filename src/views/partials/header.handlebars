@@ -1,14 +1,14 @@
 <header class="site-header sticky-top py-3">
     <nav class="container">
-        <a class="py-2 d-none d-md-inline-block mr-4" href="/"><i class="fas fa-home"></i></a>
+        <a class="py-2 d-md-inline-block mr-4" href="/"><i class="fas fa-home"></i></a>
         <!--<a class="py-2 d-none d-md-inline-block mr-4" href="/realtimeproducts">RealTimeProducts</a>-->
-        <a class="py-2 d-none d-md-inline-block mr-4" href="/products/">Productos</a>
+        <a class="py-2 d-md-inline-block mr-4" href="/products/">Productos</a>
         {{#unless user.superUser }} 
-        <a class="py-2 d-none d-md-inline-block mr-4" href="/chat">Chat</a>
+        <a class="py-2 d-md-inline-block mr-4" href="/chat">Chat</a>
         {{/unless}} 
         
         {{#if user}}
-            <div class="dropdown d-none d-md-inline-block mr-4 float-right navuser">
+            <div class="dropdown  d-md-inline-block mr-4 float-right navuser">
                 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
                     <div class="media-body my-2">{{user.name}}</div>
                     {{#if user.image }}
@@ -41,7 +41,7 @@
 </header> 
 
 {{#if user.superUser }}
-    <ul class="nav nav-tabs justify-content-center">
+    <ul class="nav nav-tabs justify-content-center menu-admin">
         <li class="navbar-brand">Panel Administrador</li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/products">Productos</a>

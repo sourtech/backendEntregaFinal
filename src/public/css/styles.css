@@ -23,6 +23,29 @@
     transition: color .15s ease-in-out;
 }
 
+.menu-admin {
+    position: fixed;
+    top: 71px;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background: lightgray;
+}
+
+@media (max-width: 600px) {
+    .site-header .navuser {
+        margin: -10px 0 0 0!important;
+    }
+    .navbar-brand {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+    .menu-admin {
+        top: 51px;
+    }
+}
+
+
 .price {
     font-weight: bold;
     font-size: 16px;
